@@ -1,4 +1,4 @@
-class star{
+class star {
   private double mX, mY, mSize;
   private int mCol;
   
