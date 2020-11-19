@@ -22,5 +22,19 @@ class Spaceship extends Floater {
     myXspeed = 0;
     myYspeed = 0;
   }
+  
+  public void rockets(){
+    //color doesn't work?
+    fill(259,89,2);
+    double deg = (myPointDirection*(Math.PI/180));
+    pushMatrix();
+    translate((float)myCenterX,(float)myCenterY);
+    rotate((float)deg);
+    strokeWeight(2.5);
+    line(-12,-5,-20,-5);
+    line(-12,0,-25,0);
+    line(-12,5,-20,5);
+    popMatrix();
+    strokeWeight(1);
+  }
 }
-
