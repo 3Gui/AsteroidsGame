@@ -32,6 +32,7 @@ class Spaceship extends Floater {
     translate((float)myCenterX,(float)myCenterY);
     rotate((float)deg);
     strokeWeight(2.5);
+    fill(255);
     line(-12,-5,-20,-5);
     line(-12,0,-25,0);
     line(-12,5,-20,5);
@@ -44,9 +45,12 @@ class Spaceship extends Floater {
     if (isAccel) {
       fill(0);
     rockets();
+    }    
   }
-    
-    
-    
+  public double getCenterX(){
+    return myCenterX;
+  }
+  public double getCenterY(){
+    return myCenterY;
   }
 }
