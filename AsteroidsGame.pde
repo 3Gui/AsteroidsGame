@@ -1,5 +1,11 @@
 Spaceship Polaris = new Spaceship();
-star[] field = new star[100];
+star[] field = new star[200];
+//Asteroid george = new Asteroid();
+ArrayList <Asteroid> belt = new ArrayList <Asteroid>();
+boolean isTurningLeft = false;
+boolean isTurningRight = false;
+boolean isAccel = false;
+boolean isHyper = false;
 void setup() {
   size(500, 500);
   background(0);
@@ -7,34 +13,90 @@ void setup() {
   for(int i = 0; i< field.length; i++){
     field[i] = new star();
   }
-   
+  
+  for(int i = 0; i< 20; i++){
+    belt.add(new Asteroid());
+  }
 }
 
 
 void draw() {
   background(0);
+  
   for(int i = 0; i< field.length; i++){
    noStroke();
     field[i].show();
   }
+ 
+ for(int i = 0; i < belt.size();i++){
+   belt.get(i).show();
+   belt.get(i).move();
+ }
+ 
   Polaris.show();
   Polaris.move();
+  
+  if (isAccel) {
+    Polaris.accelerate(0.055);
+  }
+  if (isTurningLeft) {
+    Polaris.turn(-5);
+  } 
+  if (isTurningRight) {
+    Polaris.turn(5);
+  }
+  if (isHyper) {
+    Polaris.hyperspace();
+  }
+  
+  
+  
+  //george.show();
+  //george.move();
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 void keyPressed() {
   
   if (key == 's') {
-    Polaris.accelerate(0.3);
-    Polaris.rockets();
+    isAccel = true;
   }
   if (key == 'a') {
-    Polaris.turn(-15);
+    isTurningLeft = true;
   } 
   if (key == 'd') {
-    Polaris.turn(15);
+    isTurningRight = true;
   }
   if (key == 'w') {
-    Polaris.hyperspace();
+    isHyper = true;
+  }
+  
+}
+
+void keyReleased() {
+  
+  if (key == 's') {
+    isAccel = false;
+  }
+  if (key == 'a') {
+    isTurningLeft = false;
+  } 
+  if (key == 'd') {
+    isTurningRight = false;
+  }
+  if (key == 'w') {
+    isHyper = false;
   }
   
 }
