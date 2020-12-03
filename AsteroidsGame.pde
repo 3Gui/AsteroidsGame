@@ -31,6 +31,9 @@ void draw() {
  for(int i = 0; i < belt.size();i++){
    belt.get(i).show();
    belt.get(i).move();
+   if (dist((float)Polaris.getCenterX(), (float)Polaris.getCenterY(),(float)belt.get(i).getCenterX(),(float)belt.get(i).getCenterY())< 22){
+     belt.remove(i);
+   }
  }
  
   Polaris.show();
