@@ -26,7 +26,7 @@ class Spaceship extends Floater {
   
   public void rockets(){
     //color doesn't work?
-    fill(259,89,2);
+    fill(255);
     double deg = (myPointDirection*(Math.PI/180));
     pushMatrix();
     translate((float)myCenterX,(float)myCenterY);
@@ -37,5 +37,16 @@ class Spaceship extends Floater {
     line(-12,5,-20,5);
     popMatrix();
     strokeWeight(1);
+  }
+  
+  public void show(){
+    super.show();
+    if (isAccel) {
+      fill(0);
+    rockets();
+  }
+    
+    
+    
   }
 }
