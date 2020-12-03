@@ -47,6 +47,7 @@ void draw() {
   }
   if (isHyper) {
     Polaris.hyperspace();
+    isHyper = false;
   }
   
   
@@ -95,8 +96,6 @@ void keyReleased() {
   if (key == 'd') {
     isTurningRight = false;
   }
-  if (key == 'w') {
-    isHyper = false;
-  }
+ 
   
 }
