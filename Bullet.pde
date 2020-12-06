@@ -22,16 +22,5 @@ class Bullet extends Floater
   public double getCenterY(){
     return myCenterY;
   }
-  /*
-   public void reset(){
-    myCenterX = ship.getCenterX();
-    myCenterY = ship.getCenterY(); 
-    myXspeed = ship.getXspd();
-    myYspeed = ship.getYspd();
-    myPointDirection = ship.getPointDir();
-    myColor = color(99,218,157);
-    super.accelerate(6);
-    
-  }
-  */
+  
 }
