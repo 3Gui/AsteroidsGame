@@ -111,6 +111,10 @@ void restart(){
   for(int i = 0; i< 20; i++){
     belt.add(new Asteroid());
   }
+  for(int i = 0; i< bill.size(); i++){
+    bill.remove(i);
+  }
+  
 }
 
 void win(){
