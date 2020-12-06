@@ -1,8 +1,8 @@
-class star{
+class Star{
   private double mX, mY, mSize;
   private int mCol;
   
-  public star(){
+  public Star(){
     mX = Math.random()*501;
     mY = Math.random()*501;
     mSize = Math.random()*4+1.5;
@@ -16,5 +16,12 @@ class star{
     
   }
   
+   public void reset(){
+    mX = Math.random()*501;
+    mY = Math.random()*501;
+    mSize = Math.random()*4+1.5;
+    mCol = color((int)(Math.random()*155)+100,(int)(Math.random()*155)+100,(int)(Math.random()*155)+100);
+    
+  }
   
 }
