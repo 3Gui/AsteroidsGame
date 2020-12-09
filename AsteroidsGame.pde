@@ -86,11 +86,11 @@ void draw() {
   }
   
   if(Polaris.getLives() == 0){
-    noLoop();    
+    noLoop();
     lose();
   }
   
-  if(belt.size() == 0 && Polaris.getLives() >0){
+  if(belt.size() == 0 && Polaris.getLives() > 0){
     noLoop();
     win();
   }
@@ -101,20 +101,23 @@ void draw() {
 
 
 void restart(){
+  
+  while(bill.size() > 0){
+    bill.remove(0);
+  }
+  
   Polaris.reset();
   for(int i = 0; i< field.length; i++){
     field[i].reset();
   }
-  for(int i = 0; i< belt.size(); i++){
-    belt.remove(i);
+  while(belt.size() > 0){
+    belt.remove(0);
   }
   for(int i = 0; i< 20; i++){
     belt.add(new Asteroid());
   }
-  for(int i = 0; i< bill.size(); i++){
-    bill.remove(i);
-  }
   
+ 
 }
 
 void win(){
@@ -159,6 +162,7 @@ void keyPressed() {
   }
   
   if(key == 'r'){
+
     restart();
     loop();
   }
